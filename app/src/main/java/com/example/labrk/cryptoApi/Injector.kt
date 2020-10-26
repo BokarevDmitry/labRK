@@ -12,7 +12,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 
 class Injector (apiKey: String) {
-
     private val baseUrl = "https://min-api.cryptocompare.com/"
 
     val kodeIn = Kodein {

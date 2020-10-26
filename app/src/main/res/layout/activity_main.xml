@@ -1,18 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
+        <TextView
+            android:id="@+id/textChooserCrypto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Криптовалюта:"
+            android:padding="10dp"/>
+
+        <Spinner
+            android:id="@+id/spinnerCrypto"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_alignBaseline="@+id/textChooserCrypto"
+            android:layout_toEndOf="@+id/textChooserCrypto"
+            android:paddingBottom="10dp"
+            android:entries="@array/cryptoNames" />
+
+        <TextView
+            android:id="@+id/textChooserMoney"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Валюта:"
+            android:layout_below="@+id/textChooserCrypto"
+            android:padding="10dp"/>
+
+        <Spinner
+            android:id="@+id/spinnerMoney"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_alignBaseline="@+id/textChooserMoney"
+            android:layout_toEndOf="@+id/textChooserMoney"
+            android:paddingBottom="10dp"
+            android:entries="@array/moneyNames" />
+
+        <TextView
+            android:id="@+id/infoChosen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Курс за 10 дней пара BTC/USD"
+            android:layout_below="@+id/textChooserMoney"
+            android:padding="10dp"/>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerview"
             android:scrollbars="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_below="@id/infoChosen"/>
+
 
     </RelativeLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </layout>

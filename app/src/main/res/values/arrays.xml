@@ -1,0 +1,13 @@
+<resources>
+    <string-array name="cryptoNames">
+        <item>BTC</item>
+        <item>ETH</item>
+    </string-array>
+
+    <string-array name="moneyNames">
+        <item>USD</item>
+        <item>RUB</item>
+        <item>EUR</item>
+        <item>JPY</item>
+    </string-array>
+</resources>
